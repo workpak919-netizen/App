@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Checkout
@@ -25,16 +25,15 @@ jobs:
           sudo apt-get install -y \
             git zip unzip openjdk-17-jdk python3-pip python3-setuptools \
             python3-wheel python3-dev build-essential libffi-dev \
-            libssl-dev libsqlite3-dev zlib1g-dev
+            libssl-dev libsqlite3-dev zlib1g-dev wget
           python -m pip install --upgrade pip
           pip install cython buildozer
 
-      - name: Install Android SDK Build Tools
+      - name: Install Android SDK + Build Tools
         run: |
-          sudo apt-get install -y wget
-          wget https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip
           mkdir -p $HOME/android-sdk/cmdline-tools
-          unzip commandlinetools-linux-9477386_latest.zip -d $HOME/android-sdk/cmdline-tools
+          wget https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -O cmdline-tools.zip
+          unzip cmdline-tools.zip -d $HOME/android-sdk/cmdline-tools
           mv $HOME/android-sdk/cmdline-tools/cmdline-tools $HOME/android-sdk/cmdline-tools/latest
           export ANDROID_HOME=$HOME/android-sdk
           export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$PATH
@@ -52,6 +51,7 @@ jobs:
         with:
           name: my-app-apk
           path: bin/*.apk
+
 
     
 
