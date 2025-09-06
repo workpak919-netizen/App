@@ -1,0 +1,39 @@
+name: Build APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y python3-pip openjdk-17-jdk unzip
+          pip install --upgrade pip
+          pip install cython==0.29.36
+          pip install buildozer==1.5.0
+          pip install python-for-android==2023.6.2
+
+      - name: Build with Buildozer
+        run: |
+          buildozer -v android debug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: app-apk
+          path: bin/*.apk
