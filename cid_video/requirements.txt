@@ -1,0 +1,4 @@
+# Python package requirements for the assembly helper
+# FFmpeg itself must be installed separately and available on PATH.
+
+# No third-party Python package is required by scripts/assemble_video.py.
