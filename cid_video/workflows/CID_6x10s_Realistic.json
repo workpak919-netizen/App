@@ -1,0 +1,30 @@
+{
+  "name": "CID Realistic Comedy - 6x10s Vertical",
+  "description": "Model-agnostic ComfyUI workflow specification for six 10-second realistic CID-style comedy clips.",
+  "output": {
+    "width": 576,
+    "height": 1024,
+    "fps": 24,
+    "duration_seconds": 10,
+    "clips": 6,
+    "format": "mp4"
+  },
+  "generation": {
+    "mode": "text_to_video_or_image_to_video",
+    "consistency": "reference_images_and_fixed_seed_when_supported",
+    "negative_prompt": "cartoon, anime, CGI look, deformed face, changing identity, changing uniform, extra fingers, extra limbs, duplicate people, duplicate chicken, blood, gore, watermark, text overlay"
+  },
+  "scenes": [
+    {"id": 1, "prompt_file": "prompts/scene_01.txt", "output": "output/clips/scene_01.mp4"},
+    {"id": 2, "prompt_file": "prompts/scene_02.txt", "output": "output/clips/scene_02.mp4"},
+    {"id": 3, "prompt_file": "prompts/scene_03.txt", "output": "output/clips/scene_03.mp4"},
+    {"id": 4, "prompt_file": "prompts/scene_04.txt", "output": "output/clips/scene_04.mp4"},
+    {"id": 5, "prompt_file": "prompts/scene_05.txt", "output": "output/clips/scene_05.mp4"},
+    {"id": 6, "prompt_file": "prompts/scene_06.txt", "output": "output/clips/scene_06.mp4"}
+  ],
+  "notes": [
+    "This is a portable specification, not a guaranteed drop-in workflow because ComfyUI node names differ by installed custom nodes/model version.",
+    "Install a compatible video model/custom-node package separately.",
+    "Use the same reference images and seed for character continuity when supported by the backend."
+  ]
+}
