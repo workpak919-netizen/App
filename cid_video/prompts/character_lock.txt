@@ -1,0 +1,11 @@
+CHARACTER LOCK — prepend to every scene prompt
+
+Realistic live-action Indian police procedural. Keep all characters visually identical across all six scenes. No cartoon, no animation, no costume changes, no face changes.
+
+ACP Pradyuman: senior male police officer, authoritative posture, serious expressive face, neatly groomed hair, formal CID-style police uniform, police badge and belt.
+Inspector Daya: tall muscular male police inspector, strong build, short dark hair, serious but expressive face, formal CID-style police uniform, police badge and belt.
+Inspector Abhijeet: fit male police inspector, short dark hair, observant expression, formal CID-style police uniform, police badge and belt.
+Dr. Salunkhe: middle-aged male forensic doctor, glasses, distinctive mustache, white lab coat over formal clothes, forensic kit.
+Chicken: one realistic white-and-brown hen with the same feather pattern, size, face and appearance in every scene.
+
+Visual continuity: same faces, body proportions, uniforms, accessories, chicken appearance, lighting style and realistic live-action cinematography in every clip. Vertical 9:16. Natural Indian police-crime-scene environment. Family-friendly comedy, no gore, no blood.
